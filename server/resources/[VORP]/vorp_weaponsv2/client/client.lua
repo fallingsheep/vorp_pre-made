@@ -126,7 +126,7 @@ end
 function playanim(anim, msg)
 	local playerPed = PlayerPedId()
 	TaskStartScenarioInPlace(playerPed, GetHashKey(anim), 20000, true, false, false, false)
-        progressbar.start(msg, 20000, function ()
+	progressbar.start(msg, 20000, function ()
 	end)
 	Citizen.Wait(20000)
 	ClearPedTasksImmediately(PlayerPedId())
