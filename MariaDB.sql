@@ -343,7 +343,7 @@ INSERT IGNORE INTO `banks` (`name`) VALUES
 
 
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
-INSERT INTO `items` (`item`, `label`, `limit`, `can_remove`, `type`, `usable`, `id`, `metadata`, `desc`) VALUES
+INSERT IGNORE INTO `items` (`item`, `label`, `limit`, `can_remove`, `type`, `usable`, `id`, `metadata`, `desc`) VALUES
 ('acid', 'Acid', 10, 1, 'item_standard', 1, 1, '{}', 'A corrosive substance used for various purposes.'),
 ('Agarita', 'Agarita', 10, 1, 'item_standard', 1, 2, '{}', 'A flowering plant found in the wild, known for its medicinal properties.'),
 ('Agarita_Seed', 'Agarita Seed', 10, 1, 'item_standard', 1, 3, '{}', 'A seed that can be planted to grow Agarita plants.'),
