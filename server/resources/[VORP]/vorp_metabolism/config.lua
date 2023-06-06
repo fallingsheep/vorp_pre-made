@@ -34,9 +34,7 @@ Config = {
       InnerCoreStaminaGold = 200,
       OuterCoreStaminaGold = 1000,
       PropName = "p_mugCoffee01x",
-      Animation = "drink",
-      Effect = "",
-      EffectDuration = ""
+      Animation = "drink"
     },
     {
       Name = "consumable_kidneybeans_can",
@@ -51,9 +49,7 @@ Config = {
       InnerCoreStaminaGold = 0.0,
       OuterCoreStaminaGold = 0.0,
       PropName = "s_canbeansused01x",
-      Animation = "eat",
-      Effect = "",
-      EffectDuration = ""
+      Animation = "eat"
     },
     {
       Name = "consumable_salmon_can",
@@ -68,9 +64,7 @@ Config = {
       InnerCoreStaminaGold = 0.0,
       OuterCoreStaminaGold = 0.0,
       PropName = "s_canbeansused01x",
-      Animation = "eat",
-      Effect = "",
-      EffectDuration = ""
+      Animation = "eat"
     },
     {
       Name = "consumable_medicine",
@@ -85,9 +79,7 @@ Config = {
       InnerCoreStaminaGold = 0.0,
       OuterCoreStaminaGold = 0.0,
       PropName = "p_bottlemedicine01x",
-      Animation = "drink",
-      Effect = "",
-      EffectDuration = ""
+      Animation = "drink"
     },
     {
       Name = "consumable_peach",
@@ -102,9 +94,7 @@ Config = {
       InnerCoreStaminaGold = 0.0,
       OuterCoreStaminaGold = 0.0,
       PropName = "s_peach01x",
-      Animation = "eat",
-      Effect = "",
-      EffectDuration = ""
+      Animation = "eat"
     }
   }
 

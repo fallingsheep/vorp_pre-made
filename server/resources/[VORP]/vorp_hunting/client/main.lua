@@ -1,7 +1,11 @@
 local peltz = {}
 local prompts = GetRandomIntInRange(0, 0xffffff)
 local playerJob
+local VORPcore = {}
 
+TriggerEvent("getCore", function(core)
+    VORPcore = core
+end )
 
 RegisterNetEvent("vorp:SelectedCharacter") -- NPC loads after selecting character
 AddEventHandler("vorp:SelectedCharacter", function(charid)
@@ -34,7 +38,7 @@ end)
 function StartButchers() -- Loading Butchers Function
     for i, v in ipairs(Config.Butchers) do
         local x, y, z = table.unpack(v.coords)
-        if Config.aiButcherped then
+        if v.butcherped then
             -- Loading Model
             local hashModel = GetHashKey(v.npcmodel)
             if IsModelValid(hashModel) then
@@ -199,12 +203,16 @@ Citizen.CreateThread(function()
             if 2 > dist then
                 local model = GetEntityModel(holding)
                 if holding ~= false and Config.Animals[model] == nil then
-                    if Config.maxpelts > Keys(peltz) then
 
+                    local maxpelts = Config.maxpelts
+                    if Config.maxpelts > 3 then --Limit max pelts to 3 as thats what red dead allows on a horse
+                        maxpelts = 3
+                    end
+
+                    if maxpelts > Keys(peltz) then
                         local label = CreateVarString(10, 'LITERAL_STRING', Config.Language.stow)
                         PromptSetActiveGroupThisFrame(prompts, label)
                         if Citizen.InvokeNative(0xC92AC953F0A982AE, openButcher) then
-
                             TaskPlaceCarriedEntityOnMount(player, holding, horse, 1)
                             table.insert(peltz, {
                                 holding = holding,
@@ -247,6 +255,7 @@ Citizen.CreateThread(function()
                     
                     if model and Config.SkinnableAnimals[model] ~= nil and playergate == true and bool_unk == 1 then
                         TriggerServerEvent("vorp_hunting:giveReward", "skinned", {model=model}, true)
+			VORPcore.NotifyAvanced(Config.SkinnableAnimals[model].action.." "..Config.SkinnableAnimals[model].name ,Config.SkinnableAnimals[model].type, Config.SkinnableAnimals[model].texture , "COLOR_PURE_WHITE", 4000)
                     end
                 end
             end
