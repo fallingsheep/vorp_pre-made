@@ -5,8 +5,9 @@ game 'rdr3'
 lua54 'yes'
 author 'VORP @Bytesizd'
 
-client_scripts {
+client_scripts { 
     'client/client.lua',
+    'client/functions.lua'
 }
 
 shared_scripts {
@@ -18,7 +19,7 @@ files {
     'ui/assets/*',
     'ui/assets/fonts/*'
 }
-
+    
 ui_page 'ui/index.html'
 
 export "initiate"
